@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './ExpenseForm.css'
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
 
@@ -19,9 +20,8 @@ const ExpenseForm = (props) => {
     setEnteredDate(event.target.value);
   }
 
+
   const submitHandler = (event) => {
-
-
     event.preventDefault();
 
     const expenseData = {
@@ -35,6 +35,11 @@ const ExpenseForm = (props) => {
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
+    Swal.fire(
+      'Good job!',
+      'You added a new expense!',
+      'success'
+    )
   }
 
   return (
@@ -53,7 +58,8 @@ const ExpenseForm = (props) => {
           <input type='date' min='2019-01-01' max='2022-12-31' value={enteredDate} onChange={dateChangeHandler} />
         </div>
       </div>
-      <div className='new-expense__actions'>
+      <div className='new-expense__actions-on'>
+        <button type='button' onClick={props.onCancel}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
