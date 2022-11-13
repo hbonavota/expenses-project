@@ -22,5 +22,9 @@
 }
 
 .new-expense__actions {
+  /* text-align: right; */
+}
+
+.new-expense__actions-on {
   text-align: right;
 }
