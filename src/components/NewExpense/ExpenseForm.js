@@ -24,6 +24,14 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (!enteredTitle || !enteredAmount || !enteredDate) {
+      return Swal.fire(
+        'Sory',
+        '¡You must complete inputs!',
+        'warning'
+      )
+    }
+
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
