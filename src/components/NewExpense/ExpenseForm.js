@@ -26,8 +26,8 @@ const ExpenseForm = (props) => {
 
     if (!enteredTitle || !enteredAmount || !enteredDate) {
       return Swal.fire(
-        'Sory',
-        '¡You must complete inputs!',
+        'Sorry',
+        '¡You must complete the inputs!',
         'warning'
       )
     }
